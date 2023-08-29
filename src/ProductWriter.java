@@ -22,15 +22,15 @@ public class ProductWriter {
         do {
 
             String ID = SafeInput.getRegExString(console, "Enter the ID of the product", "^[0-9]{6}$");
-            String name = SafeInput.getNonZeroLenString(console, "Enter the first name of the product");
+            String name = SafeInput.getNonZeroLenString(console, "Enter the name of the product");
             String description = SafeInput.getNonZeroLenString(console, "Enter the description of the product");
-            double cost = SafeInput.getRangedDouble(console, "Enter the cost of the product", 0, 1000000);
+            double cost = SafeInput.getRangedDouble(console, "Enter the cost of the product ", 0, 999999999);
 
             String record = String.join(", ", ID, name, description, Double.toString(cost));
 
             list.add(record);
 
-            done = !(SafeInput.getYNConfirm(console,"Do you want to enter another person?"));
+            done = !(SafeInput.getYNConfirm(console,"Do you want to enter another product?"));
 
             if (done) {
                 String fileName = SafeInput.getNonZeroLenString(console, "Enter a name for a file that saves your list");

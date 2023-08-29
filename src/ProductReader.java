@@ -34,8 +34,8 @@ public class ProductReader {
                 BufferedReader reader = new BufferedReader(new InputStreamReader(in));
 
                 System.out.printf("\n");
-                System.out.printf("%-12s  %-12s %-12s %-12s %-12s\n", "ID#", "Firstname", "Lastname", "Title", "YOB");
-                System.out.printf("===========================================================\n");
+                System.out.printf("%-12s  %-12s %-30s %-12s \n", "ID#", "Name", "Description", "Cost");
+                System.out.printf("================================================================\n");
 
                 while (reader.ready())
                 {
@@ -44,12 +44,11 @@ public class ProductReader {
                     String[] values = rec.split(",");
 
                     String ID = values[0];
-                    String firstName = values[1];
-                    String lastName = values[2];
-                    String title = values[3];
-                    String yearOfBirth = values[4];
+                    String name = values[1];
+                    String description = values[2];
+                    String cost = values[3];
 
-                    System.out.printf("%-12s %-12s %-12s %-12s %-12s\n", ID, firstName, lastName, title, yearOfBirth);
+                    System.out.printf("%-12s %-12s %-30s %-12s\n", ID, name, description, cost);
 
                 }
 
